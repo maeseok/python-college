@@ -1,1 +1,38 @@
+KEYWORD : 연예인 사진 학습
+
+- 예시
 https://bcho.tistory.com/1176
+https://bcho.tistory.com/1178 - CNN 활용 연예인
+https://bcho.tistory.com/1179
+
+https://www.youtube.com/watch?v=n5nGs4pJhWA - CNN 활용
+
+https://velog.io/@qwe13579/%EC%97%B0%EC%98%88%EC%9D%B8-%EC%96%BC%EA%B5%B4-%EB%B6%84%EB%A5%98%ED%95%98%EA%B8%B01-%EC%97%B0%EC%98%88%EC%9D%B8-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%9B%B9-%ED%81%AC%EB%A1%A4%EB%A7%81%ED%95%98%EA%B8%B0
+https://kangbk0120.github.io/articles/2018-02/cnn-celeb - CNN
+https://twinw.tistory.com/199 - 예시
+https://ceuity.tistory.com/30 - 예시
+
+- 크롤링
+https://ai-creator.tistory.com/527 - 카카오 api 활용 사진
+https://wikidocs.net/61209 - selenium 활용 네이버 이미지 크롤링
++ 네이버 기사 댓글 수집도 있음
+
+이미지, 댓글 등 크롤링 -> 이미지 선별, 텍스트 선별  -> 
+이미지 전처리(얼굴만) -> 의견 반영하여 모델링 -> 캐스팅 추천 시스템
+(옷, 분위기, 배경 등의 반영은?)
+
+사용자 닮은 연예인?
+
+'''
+연예인이나 인플루언서 초상권을 침해한 AI 모델로 창작물을 만들어 수익을 낼 경우 민형사상 책임을 질 수 있다. 
+부정경쟁방지법 2조는 ‘국내에 널리 인식되고 경제적 가치를 가지는 타인의 성명, 초상, 음성, 서명 등 타인을 
+식별할 수 있는 표지를 무단으로 사용함으로써 타인의 경제적 이익을 침해하는 행위’를 부정경쟁행위로 간주하고 있다.
+'''
+
+
++ GAN
+https://goldenrabbit.co.kr/2023/07/31/%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98-%EB%94%A5%EB%9F%AC%EB%8B%9D-gan%EC%9C%BC%EB%A1%9C-%EC%82%AC%EB%9E%8C-%EC%96%BC%EA%B5%B4-%EB%A7%8C%EB%93%A4%EA%B8%B0/
+
+
++ 데이터셋
+https://blog.naver.com/PostView.nhn?blogId=jws2218&logNo=221930525326&parentCategoryNo=&categoryNo=17&viewDate=&isShowPopularPosts=false&from=postView
