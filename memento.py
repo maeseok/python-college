@@ -2,6 +2,7 @@ from cs1graphics import *
 import time as Time
 import random
 
+
 ### Canvas 생성 
 canvas = Canvas(640, 580)
 canvas.setTitle("Memento")
@@ -9,8 +10,8 @@ canvas.setTitle("Memento")
 
 
 # 메멘토게임을 위한 6가지 이미지 호출을 위한, 이름과 경로정의
-path = "./images/"
-names = ("pika.png", "firi.png", "green.png", "othergreen.png", "liza.png", "strange.png")
+path = "./Images/"
+names = ("pika.PNG", "firi.PNG", "green.PNG", "othergreen.PNG", "liza.PNG", "strange.PNG")
 
 
 
@@ -27,7 +28,7 @@ def initialize():
         for k in range(4):
             img = Image(path + names[i])
             temp_tuple = (img, names[i])
-            cards.append(temp_tuple) #사진+이름
+            cards.append(temp_tuple)
 
     for i in range(24):
         card = Layer()
@@ -72,22 +73,36 @@ def print_cards():
 ############### TASK-1) num1과 num2가 1) range(24)의 범위안에 있는 수인지, 2) 두 수가 다른지, 3) 두 수 중 어느 하나라도 correct list 에 있지는 않은지 확인해서 
 ############### 1)-3) 모두 T인 경우에 T, 아닐 때는 F를 반환하시오
 def is_valid(num1, num2):
-    pass
-
-
+    if num1>=24 or num2>=24:
+        return False
+    elif num1==num2:
+        return False
+    elif num1 in correct_list or num2 in correct_list:
+        return False
+    else:
+        return True
 
 
 #두 개의 수를 확인하는 함수 
 
 ############# TASK-2) 아래에 해당하는 코드를 작성하시오
-############# 1) num1과 num2에 해당하는 카드는 그림을 보여주면서 screen을 보여라 (correct_list에 넣고 print_cards하세요/) 
+############# 1) num1과 num2에 해당하는 카드는 그림을 보여주면서 screen을 보여주세요. (correct_list에 넣고 print_cards하세요) 
 ############# 2) time_delay동안 멈추세요. 
-############# 3) 두 개의 카드가 다른 카드라면, 두 카드를 correct list에 빼고 다시 print_cards하세요.
+############# 3) 두 개의 카드가 다른 카드라면, 두 카드를 correct list에서 빼고 다시 print_cards하세요. 
+############# ('두 카드가 다른 카드라면'은 if cards[num1][1]!=cards[num2][1]: 로 표현할 수 있습니다. )
 ############# 4) 맞췄다면 True, 아니라면 False를 그 결과로 반환하세요.
-def check(num1, num2):
-    pass
-
-
+def check(num1, num2,correct_list):
+    correct_list.append(num1)
+    correct_list.append(num2)
+    print_cards()
+    Time.sleep(1)
+    if cards[num1][1]!=cards[num2][1]: 
+        correct_list.remove(num1)
+        correct_list.remove(num2)
+        print_cards()
+        return False
+    else:
+        return True
 
 
 ######################################################################################### 실행 코드
@@ -97,9 +112,9 @@ initialize()
 
 
 
-############# TASK-3) 24개의 모든 그림을 보여주고 10초간 정지 
-# 이제 숫자패드를 보여주면서 게임을 시작해야 하므로 correct_list 를 모두 비우고
-# 숫자카드들로만 이루어진 screen을 보여준다.
+############# TASK-3) 
+############# 1) 24개의 모든 그림을 보여주고 10초간 정지
+############# 2) 이제 숫자패드를 보여주면서 게임을 시작해야 하므로 correct_list 를 모두 비우고 숫자카드들로만 이루어진 screen을 보여준다.
 
 #모든 그림 보여주고 10초간 정지
 correct_list = [i for i in range(24)]
@@ -110,12 +125,25 @@ correct_list = []
 print_cards()
 
 
-
-
-
-
 ############ Task-4) while 문을 사용하여 모든 카드를 맞출 때까지 게임을 계속한다.
 ############ 이곳에 작성될 코드는 HW문서를를 참고하여 작성하시오 (hint: 위에서 정의된 함수 (is_valid와 check)를  잘 사용하시오!)
 print("### Welcome to the Python Memento game!!! ###")
+tries=0
 
-#함수 사용
+while len(correct_list)!=24: 
+    tries+=1
+    print("%d-th try" %tries)
+    print("You got %d pairs" %int(len(correct_list)/2))
+    num1=int(input("Input the first card number : "))
+    num2=int(input("Input the second card number : "))
+    res = is_valid(num1,num2)
+    if not res:
+        continue
+    
+    res2 = check(num1,num2,correct_list)
+    if res2:
+        print("Correct")
+    else:
+        print("Wrong!")
+
+print("End of memento")
