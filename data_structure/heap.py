@@ -1,3 +1,5 @@
+import heapq
+
 class Heap:
 	def __init__(self, *args):
 		if len(args) != 0:
@@ -58,17 +60,15 @@ class Heap:
 	def size(self) -> int:
 		return len(self.__A)
 
-A=[1,11,9,2,3]
+A=[8, 7, 8, 4, 3, 3, 5, 2, 1]
+min_heap=[]
 heap = Heap(A)
 heap.buildHeap()
-print(A)
-heap.insert(7)
-print(A)
-heap.insert(5)
-print(A)
-heap.insert(4)
-print(A)
-
-heap.deleteMax()
-heap.deleteMax()
-print(A)
+for i in range(8):
+    heapq.heappush(min_heap,A[0])
+    heap.deleteMax()
+    print("Max heap : {}".format(A))
+    print("Min heap : {}".format(min_heap))
+    print()
+heapq.heappush(min_heap,A[0])
+print(min_heap)
