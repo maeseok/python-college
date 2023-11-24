@@ -1,3 +1,5 @@
+import heapq
+
 def bubble_sort(arr):
     n = len(arr)
     cnt = 0
