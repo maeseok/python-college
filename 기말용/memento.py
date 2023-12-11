@@ -1,5 +1,5 @@
 from cs1graphics import *
-import time as Time
+from time import *
 import random
 
 
@@ -11,7 +11,7 @@ canvas.setTitle("Memento")
 
 # 메멘토게임을 위한 6가지 이미지 호출을 위한, 이름과 경로정의
 path = "./images/"
-names = ("pika.PNG", "firi.PNG", "green.PNG", "othergreen.PNG", "liza.PNG", "strange.PNG")
+names = ("pika.PNG", "firi.PNG", "green.PNG", "othergreen.PNG", "liza.PNG", "strage.PNG")
 
 
 
@@ -73,13 +73,7 @@ def print_cards():
 ############### TASK-1) num1과 num2가 1) range(24)의 범위안에 있는 수인지, 2) 두 수가 다른지, 3) 두 수 중 어느 하나라도 correct list 에 있지는 않은지 확인해서 
 ############### 1)-3) 모두 T인 경우에 T, 아닐 때는 F를 반환하시오
 def is_valid(num1, num2):
-    if num1>23 or num2>23:
-        return False
-    if num1==num2:
-        return False
-    if num1 in correct_list or num2 in correct_list:
-        return False
-    return True
+
 
 
 
@@ -93,16 +87,10 @@ def is_valid(num1, num2):
 ############# ('두 카드가 다른 카드라면'은 if cards[num1][1]!=cards[num2][1]: 로 표현할 수 있습니다. )
 ############# 4) 맞췄다면 True, 아니라면 False를 그 결과로 반환하세요.
 def check(num1, num2):
-    correct_list.append(num1)
-    correct_list.append(num2)
-    print_cards()
-    Time.sleep(3)
+
     if cards[num1][1]!=cards[num2][1]: 
-        correct_list.remove(num1)
-        correct_list.remove(num2)
-        print_cards()
-        return False
-    return True
+
+
 
 
 
@@ -121,11 +109,7 @@ initialize()
 ############# TASK-3) 
 ############# 1) 24개의 모든 그림을 보여주고 10초간 정지
 ############# 2) 이제 숫자패드를 보여주면서 게임을 시작해야 하므로 correct_list 를 모두 비우고 숫자카드들로만 이루어진 screen을 보여준다.
-correct_list=[i for i in range(24)]
-print_cards()
-Time.sleep(2)
-correct_list=[]
-print_cards()
+
 
 
 
@@ -134,18 +118,12 @@ print_cards()
 ############ 이곳에 작성될 코드는 HW문서를를 참고하여 작성하시오 (hint: 위에서 정의된 함수 (is_valid와 check)를  잘 사용하시오!)
 print("### Welcome to the Python Memento game!!! ###")
 tries=0
-while len(correct_list)!=24:
-    tries+=1
+while #############?? 
     print("%d-th try" %tries)
     print("You got %d pairs" %int(len(correct_list)/2))
-    num1=int(input("Input the first card number: "))
-    num2=int(input("Input the second card number: "))
-    if not is_valid(num1,num2):
-        continue
-    if(check(num1,num2)):
-        print("Correct")
-    else:
-        print("Wrong!")
+    ####################??
+    ####################??
+    ####################??
 
 
     
